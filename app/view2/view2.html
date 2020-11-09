@@ -1,0 +1,423 @@
+<div class="row">
+    <div class="col">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="basic-tab" data-toggle="tab" data-target="#basic" role="tab"
+                   aria-controls="basic"
+                   aria-selected="true"
+                   ng-click="tabClick($event)">Basic Info</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="about-tab" data-toggle="tab" data-target="#about" role="tab"
+                   aria-controls="about"
+                   aria-selected="false"
+                   ng-click="tabClick($event)">About</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="social-tab" data-toggle="tab" data-target="#social" role="tab"
+                   aria-controls="social"
+                   aria-selected="false"
+                   ng-click="tabClick($event)">Social Media</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="summary-tab" data-toggle="tab" data-target="#summary" role="tab"
+                   aria-controls="summary"
+                   aria-selected="false"
+                   ng-click="tabClick($event)">Summary</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                <form ng-submit="click1($event)">
+                    <div class="row">
+                        <h3>Basic Info</h3>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">Full Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="dob" name="dob" max="{{today()}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                        <div class="col-sm-10">
+                            <select name="gender" id="gender" class="form-control">
+                                <option value="">-----</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nationality" class="col-sm-2 col-form-label">Nationality</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nationality" name="nationality" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="profileImage" class="col-sm-2 col-form-label">Profile Image</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control-file" id="profileImage" accept="image/*"
+                                   ng-upload-change="handleImage($event)">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">Next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <form ng-submit="click2($event)">
+                    <div class="row">
+                        <h3>About</h3>
+                    </div>
+                    <div class="form-group row">
+                        <label for="location" class="col-sm-2 col-form-label">Location</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="location" name="location" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="association" class="col-sm-2 col-form-label">Association</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="association" name="association"
+                                   placeholder="e.g. NBA, NFL, etc." required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="team" class="col-sm-2 col-form-label">Team</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="team" name="team" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="sports" class="col-sm-2 col-form-label">Sports</label>
+                        <div class="col-sm-10">
+                            <select multiple class="form-control" id="sports" name="sports" required>
+                                <option>Golf</option>
+                                <option>Tennis</option>
+                                <option>Cricket</option>
+                                <option>Basketball</option>
+                                <option>Baseball</option>
+                                <option>American Football</option>
+                                <option>Aquatics</option>
+                                <option>Archery</option>
+                                <option>Automobile Racing</option>
+                                <option>Badminton</option>
+                                <option>Beach Volleyball</option>
+                                <option>Bobsleigh</option>
+                                <option>Body Building</option>
+                                <option>Boxing</option>
+                                <option>Cross Country Running</option>
+                                <option>Cross Country Skiing</option>
+                                <option>Curling</option>
+                                <option>Cycling</option>
+                                <option>Darts</option>
+                                <option>Decathlon</option>
+                                <option>Down Hill Skiing</option>
+                                <option>Equestrianism</option>
+                                <option>eSports</option>
+                                <option>Fencing</option>
+                                <option>Field Hockey</option>
+                                <option>Figure Skating</option>
+                                <option>Gymnastics</option>
+                                <option>Ice Hockey</option>
+                                <option>Martial Arts</option>
+                                <option>Mixed Martial Arts</option>
+                                <option>Modern Pentathlon</option>
+                                <option>Motorcycle Racing</option>
+                                <option>Netball</option>
+                                <option>Polo</option>
+                                <option>Racquetball</option>
+                                <option>Rowing</option>
+                                <option>Rugby</option>
+                                <option>Sailing</option>
+                                <option>Softball</option>
+                                <option>Shooting</option>
+                                <option>Skateboarding</option>
+                                <option>Skeet Shooting</option>
+                                <option>Skeleton</option>
+                                <option>Snow Boarding</option>
+                                <option>Soccer (Football)</option>
+                                <option>Squash</option>
+                                <option>Surfing</option>
+                                <option>Swimming</option>
+                                <option>Track and Field</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="about_input" class="col-sm-2 col-form-label">Bio</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="about_input" name="about"
+                                      placeholder="Short Bio"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="interests" class="col-sm-2 col-form-label">Interests</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="interests" name="interests"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="pets" class="col-sm-2 col-form-label">Pets</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pets" name="pets">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Alcohol</label>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="alcohol" id="inlineRadio1"
+                                       value="true">
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="alcohol" id="inlineRadio2"
+                                       value="false">
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Marriage Status</label>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="married" id="inlineRadio3"
+                                       value="true">
+                                <label class="form-check-label" for="inlineRadio3">Married</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="married" id="inlineRadio4"
+                                       value="false">
+                                <label class="form-check-label" for="inlineRadio4">Single</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">Next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
+                <form ng-submit="click3($event)">
+                    <div class="form-group row">
+                        <label for="facebook" class="col-sm-2 col-form-label">Facebook</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="facebook" name="facebook">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="twitter" class="col-sm-2 col-form-label">Twitter</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="twitter" name="twitter">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="instagram" class="col-sm-2 col-form-label">Instagram</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="instagram" name="instagram">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="snapchat" class="col-sm-2 col-form-label">Snapchat</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="snapchat" name="snapchat">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="twitch" class="col-sm-2 col-form-label">Twitch</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="twitch" name="twitch">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">Next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+                <form ng-submit="click4($event)">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h3>Basic Info</h3>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-link" ng-click="click0()">edit</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Name</h6></div>
+                                <div class="col">
+                                    {{totalData.get('name')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Date of Birth</h6></div>
+                                <div class="col">
+                                    {{totalData.get('dob').toLocaleString()}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Gender</h6></div>
+                                <div class="col">
+                                    {{totalData.get('gender')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Nationality</h6></div>
+                                <div class="col">
+                                    {{totalData.get('nationality')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Profile Image</h6></div>
+                                <div class="col">
+                                    <img src={{totalData.get('profileImage')}} class="img-thumbnail" alt="image"
+                                         ng-if="totalData.get('profileImage')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h3>About</h3>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-link" ng-click="click1()">edit</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Location</h6></div>
+                                <div class="col">
+                                    {{totalData.get('location')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Association</h6></div>
+                                <div class="col">
+                                    {{totalData.get('association')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Team</h6></div>
+                                <div class="col">
+                                    {{totalData.get('team')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Sports</h6></div>
+                                <div class="col">
+                                    <ul>
+                                        <li ng-repeat="sport in totalData.getAll('sports')">{{sport}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Bio</h6></div>
+                                <div class="col">
+                                    {{totalData.get('about')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Interests</h6></div>
+                                <div class="col">
+                                    {{totalData.get('interests')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Pets</h6></div>
+                                <div class="col">
+                                    {{totalData.get('pets')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Alcohol</h6></div>
+                                <div class="col">
+                                    <span ng-if="totalData.get('alcohol') === 'true'">Yes</span>
+                                    <span ng-if="totalData.get('alcohol') === 'false'">No</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Marriage Status</h6></div>
+                                <div class="col">
+                                    <span ng-if="totalData.get('married') === 'true'">Married</span>
+                                    <span ng-if="totalData.get('married') === 'false'">Single</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h3>Socials</h3>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-link" ng-click="click2()">edit</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Facebook</h6></div>
+                                <div class="col">
+                                    {{totalData.get('facebook')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Twitter</h6></div>
+                                <div class="col">
+                                    {{totalData.get('twitter')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Instagram</h6></div>
+                                <div class="col">
+                                    {{totalData.get('instagram')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Snapchat</h6></div>
+                                <div class="col">
+                                    {{totalData.get('snapchat')}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><h6>Twitch</h6></div>
+                                <div class="col">
+                                    {{totalData.get('twitch')}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            {{saveMessage}}
+                            <a href="#!/view1" class="btn btn-primary" ng-if="currentId">Go To Profiles</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
